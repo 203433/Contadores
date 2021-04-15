@@ -13,53 +13,61 @@ public class Main {
     public static void main(String [] args) {
 
         Sort s = new Sort<>();
-        int opcion, contador;
-        
+        int opcion, contador, n;
+
         do{
             System.out.println("Menu: \n1) Ordenamiento QuickSort \n2) Ordenamiento MergeSort"+
-                            "\n3) Ordenamiento CycleSort \n4) Ordenamiento Fisher-Yates \n5) Salir");
+                    "\n3) Ordenamiento CycleSort \n4) Ordenamiento Fisher-Yates \n5) Salir");
             opcion = teclado.nextInt();
 
             switch (opcion) {
                 case 1:
+                    n = 1000;
                     System.out.println("- Q U I C K S O R T -");
                     System.out.println("Tamanio del array \tIteraciones");
                     for(int i = 0; i < 5; i++){
-                        contador = 0;
-                        ArrayList array = generarObjetos(rn.nextInt(10000));
-                        int iter = s.quickSort(array, 0, array.size()-1, contador);
+                        s.setContador(0);
+                        ArrayList array = generarObjetos(n);
+                        int iter = s.quickSort(array, 0, array.size()-1);
                         System.out.println(array.size()+"\t\t\t"+iter);
+                        n = n +1000;
                     }
                     break;
                 case 2:
+                    n = 1000;
                     System.out.println("- M E R G E S O R T -");
                     System.out.println("Tamanio del array \tIteraciones");
                     for(int i = 0; i < 5; i++){
-                        contador = 0;
-                        ArrayList array = generarObjetos(rn.nextInt(10000));
-                        int iter = s.mergesort(array, 0, array.size()-1);
-                        System.out.println(array.size()+"\t\t\t"+iter);
+                        s.setContador(0);
+                        ArrayList array = generarObjetos(n);
+                        s.mergesort(array, 0, array.size()-1);
+                        System.out.println(array.size()+"\t\t\t"+s.getContador());
+                        n = n +1000;
                     }
                     break;
                 case 3:
+                    n = 1000;
                     System.out.println("- C Y C L E S O R T -");
                     System.out.println("Tamanio del array \tIteraciones");
                     for(int i = 0; i < 5; i++){
-                        contador = 0;
-                        ArrayList array = generarObjetos(rn.nextInt(10000));
+                        s.setContador(0);
+                        ArrayList array = generarObjetos(n);
                         int iter = s.cycleSort(array, array.size());
                         System.out.println(array.size()+"\t\t\t"+iter);
+                        n = n +1000;
                     }
                     break;
 
                 case 4:
+                    n = 1000;
                     System.out.println("- F I S H E R - Y A T E S -");
                     System.out.println("Tamanio del array \tIteraciones");
                     for(int i = 0; i < 5; i++){
-                        contador = 0;
-                        ArrayList array = generarObjetos(rn.nextInt(10000));
+                        s.setContador(0);
+                        ArrayList array = generarObjetos(n);
                         int iter = s.fisherYates(array);
                         System.out.println(array.size()+"\t\t\t"+iter);
+                        n = n +1000;
                     }
                     break;
             }
