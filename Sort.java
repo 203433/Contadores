@@ -5,7 +5,6 @@ public class Sort <T extends Comparable <T>>{
     
     public int insercion(ArrayList<T> array){
         T aux;
-        int contador = 0;
         for(int i = 1; i < array.size(); i++){
             aux = array.get(i);
             for(int j = (i-1); j>=0 && (array.get(j).compareTo(aux)  > 0); j--){
@@ -21,7 +20,7 @@ public class Sort <T extends Comparable <T>>{
     
     public int quickSort(ArrayList<T> array, int left, int right, int contador){
         int i = left, j = right;
-        
+
         T tmp;
         int centro = (left + right)/2;
         T pivot = array.get(centro);
@@ -45,7 +44,7 @@ public class Sort <T extends Comparable <T>>{
         }
         //System.out.println("Iteraciones: "+contador);
         int index = i;
-        
+
         if(left < (index-1)){
             quickSort(array, left, index - 1, contador);
         }
@@ -57,7 +56,7 @@ public class Sort <T extends Comparable <T>>{
     }
 
     //private int partition(ArrayList<T> array, int left, int right) {
-      //  return i;
+    //  return i;
     //}
 
     public int mergesort(ArrayList<T> array, int izq, int der){
@@ -78,7 +77,7 @@ public class Sort <T extends Comparable <T>>{
         int contador = 0;
         int n1 = middle - izq + 1;
         int n2 = der - middle;
-      
+
         //ArrayList temporales.
         ArrayList<T> leftArray = new ArrayList<>();
         ArrayList<T> rightArray = new ArrayList<>();
@@ -91,7 +90,7 @@ public class Sort <T extends Comparable <T>>{
         }
         int i = 0, j = 0;
         int k = izq;
-      
+
         //Ordenamiento.
         while (i < n1 && j < n2) {
             if(leftArray.get(i).compareTo(rightArray.get(j)) <= 0){

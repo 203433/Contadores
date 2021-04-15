@@ -1,4 +1,4 @@
-//HOLA
+
 
 public class Datos implements Comparable<Datos>{
     private int numero;

@@ -7,7 +7,7 @@ import java.util.Scanner;
 //Enrique Verdi Cruz 203433
 
 public class Main {
-    
+
     static Random rn = new Random();
     static Scanner teclado = new Scanner(System.in);
     public static void main(String [] args) {
@@ -19,7 +19,7 @@ public class Main {
             System.out.println("Menu: \n1) Ordenamiento QuickSort \n2) Ordenamiento MergeSort"+
                             "\n3) Ordenamiento CycleSort \n4) Ordenamiento Fisher-Yates \n5) Salir");
             opcion = teclado.nextInt();
-            
+
             switch (opcion) {
                 case 1:
                     System.out.println("- Q U I C K S O R T -");
@@ -67,7 +67,7 @@ public class Main {
     }
 
     private static ArrayList<Datos> generarObjetos(int cantidad) {
-        
+
         String alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         ArrayList<Datos> list = new ArrayList<>();
         for(int i = 0; i < cantidad; i++){
